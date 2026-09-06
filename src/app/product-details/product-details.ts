@@ -92,7 +92,8 @@ export class ProductDetails {
   RemovefromCart(productId: number | string) {
     this.product.removeitemfromcart(productId);
     if (!localStorage.getItem('user')) {
-      
+      this.product.removeitemfromcart(productId);
+      this.removecart = false;
     } else {
       let user=localStorage.getItem('user')
       let userId=user && JSON.parse(user).id

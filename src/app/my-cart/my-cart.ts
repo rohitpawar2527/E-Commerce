@@ -27,6 +27,11 @@ export class MyCart implements OnInit {
   removeToCart(cartId: number | string) {
     this.cartdata && this.product.removetocart(cartId).subscribe((result) => {
       this.loadDetails();
+      let userStore = localStorage.getItem('user');
+      if (userStore) {
+        let userId = JSON.parse(userStore).id;
+        this.product.getCartList(userId);
+      }
     })
   }
   loadDetails() {
