@@ -1,0 +1,148 @@
+<div class="container my-5">
+    <h2 class="mb-4 fw-bold text-center">Checkout 💳</h2>
+    <p class="text-center checkout-subtitle mb-4" *ngIf="ordermessage">
+    <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill px-3 py-2 fw-semibold">
+        {{ordermessage}}
+    </span>
+</p>
+
+    <form #checkoutForm="ngForm" (ngSubmit)="orderNow(checkoutForm.value)">
+        <div class="row g-4" *ngIf="pricesummary">
+
+            <div class="col-lg-8">
+
+                <!-- Shipping Address -->
+                <div class="card shadow-sm border-0 rounded-3 mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3">📍 Shipping Address</h5>
+                        <hr class="text-muted">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Full Name</label>
+                                <input type="text" class="form-control" name="name" ngModel
+                                    placeholder="enter your name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Mobile Number</label>
+                                <input type="tel" class="form-control" name="mobile" ngModel placeholder="9876543210"
+                                    required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Flat, House No., Building, Apartment</label>
+                                <input type="text" class="form-control" name="address" ngModel
+                                    placeholder="Flat 402, Sunshine Apartments" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">City</label>
+                                <input type="text" class="form-control" name="city" ngModel placeholder="Pune" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">State</label>
+                                <input type="text" class="form-control" name="state" ngModel placeholder="Maharashtra"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Pincode</label>
+                                <input type="text" class="form-control" name="pincode" ngModel placeholder="411057"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="card shadow-sm border-0 rounded-3 mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3">💳 Payment Options</h5>
+                        <hr class="text-muted">
+
+                        <div class="form-check p-3 border rounded-3 mb-2 bg-light d-flex align-items-center">
+                            <input class="form-check-input me-3 ms-1" type="radio" name="paymentMethod" id="cod"
+                                value="COD" checked>
+                            <label class="form-check-label fw-semibold w-100" for="cod">
+                                💵 Cash on Delivery (COD)
+                                <small class="d-block text-muted fw-normal">Pay with cash when your order is
+                                    delivered</small>
+                            </label>
+                        </div>
+
+                        <div class="form-check p-3 border rounded-3 mb-2 d-flex align-items-center">
+                            <input class="form-check-input me-3 ms-1" type="radio" name="paymentMethod" id="upi"
+                                value="UPI">
+                            <label class="form-check-label fw-semibold w-100" for="upi">
+                                📱 UPI / QR Code (GPay, PhonePe, Paytm)
+                                <small class="d-block text-muted fw-normal">Instant payment using any UPI app</small>
+                            </label>
+                        </div>
+
+                        <div class="form-check p-3 border rounded-3 d-flex align-items-center">
+                            <input class="form-check-input me-3 ms-1" type="radio" name="paymentMethod" id="card"
+                                value="CARD">
+                            <label class="form-check-label fw-semibold w-100" for="card">
+                                💳 Credit / Debit Card
+                                <small class="d-block text-muted fw-normal">Visa, MasterCard, RuPay supported</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 rounded-3 sticky-top" style="top: 20px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3">Order Summary</h5>
+                        <hr>
+
+                        <!-- Order Price -->
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Items Total</span>
+                            <span>₹{{ pricesummary.price }}</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Discount (10%)</span>
+                            <span class="text-success">- ₹{{ pricesummary.discount }}</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Delivery Charges</span>
+                            <span class="text-success" *ngIf="pricesummary.delivery === 0">FREE</span>
+                            <span *ngIf="pricesummary.delivery > 0">₹{{ pricesummary.delivery }}</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">Tax (GST 18%)</span>
+                            <span>₹{{ pricesummary.tax }}</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="fw-bold fs-5">Total Payable</span>
+                            <span class="fw-bold fs-5 text-success">₹{{ pricesummary.total }}</span>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <button type="submit" class="btn btn-success w-100 fw-bold py-3 shadow-sm text-uppercase">
+                            Place Order
+                        </button>
+
+                        <a routerLink="/cart"
+                            class="btn btn-link text-decoration-none w-100 text-center mt-2 text-muted small">
+                            ← Back to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+
+ngb-carousel {
+    display: block;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.picsum-img-wrapper {
+    width: 100%;
+    height: 450px; 
+    background-color: #000; 
+}
+
+.image-style {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+
+.carousel-caption {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}

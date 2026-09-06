@@ -1,0 +1,41 @@
+<nav class="navbar">
+    <h2 class="nav-logo">E-Comm</h2>
+    <div *ngIf="menuType==='default' || menuType=== 'user'" class="nav-search">
+        <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+            placeholder="search product">
+        <button (click)="submitSearch(searchInput.value)" class="btn">Search</button>
+        <ul class="suggested-result" *ngIf="searchResult">
+            <li *ngFor="let item of searchResult">
+                <a (mousedown)="redirecttoDetails(item.id)">{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div [ngSwitch]="menuType">
+        <ul *ngSwitchCase="'default'" class="nav-links">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-auth">Seller</a></li>
+            <li><a routerLink="/user-auth"> Log In/Sign Up</a></li>
+            <li><a>Cart({{cartItems}})</a></li>
+        </ul>
+        <ul *ngSwitchCase="'user'" class="nav-links">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-auth">Seller</a></li>
+            <li><a
+                    style="color: #c810cf; font-weight: bold; background: #f7e7ff; padding: 4px 12px; border-radius: 15px;">
+                    {{userName | titlecase}}</a></li>
+            <li><a (click)="userLogOut()" style="cursor: pointer;"> Log Out</a></li>
+            <li><a (click)="gotoOrders()">My Orders</a></li>
+            <li><a routerLink="/my-cart">Cart({{cartItems}})</a></li>
+        </ul>
+        <ul *ngSwitchCase="'seller'" class="nav-links">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-home">Seller Home</a></li>
+            <li><a routerLink="/seller-product-list">Product List</a></li>
+            <li><a routerLink="/seller-add-product"> Add Product</a></li>
+            <li><a (click)="LogOut()" style="cursor: pointer;"> Log Out</a></li>
+            <li><a
+                    style="color: #c810cf; font-weight: bold; background: #f7e7ff; padding: 4px 12px; border-radius: 15px;">
+                    {{ SellerName | titlecase}}</a></li>
+        </ul>
+    </div>
+</nav>

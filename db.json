@@ -1,0 +1,169 @@
+{
+  "seller": [
+    {
+      "name": "rohit Pawar",
+      "email": "rohitpawar@seller.com",
+      "password": "rohit@2527",
+      "id": "1"
+    },
+    {
+      "name": "shripad Pawar",
+      "email": "shripadpawar@seller.com",
+      "password": "shripad@2527",
+      "id": "2"
+    },
+    {
+      "name": "Nikita Pawar",
+      "email": "nikitapawar@seller.com",
+      "password": "nikita@2527",
+      "id": "3"
+    },
+    {
+      "name": "Rambhau Mane",
+      "email": "rambhau@seller.com",
+      "password": "rambhau@2527",
+      "id": "4"
+    },
+    {
+      "name": "Shree",
+      "email": "shree@seller.com",
+      "password": "shree@2527",
+      "id": "5"
+    }
+  ],
+  "product": [
+    {
+      "name": "I Phone 17",
+      "price": 12000,
+      "category": "Mobile",
+      "color": "Black",
+      "image": "https://images.unsplash.com/photo-1709859071282-9982d4d7fe81?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is I Phone 17",
+      "id": 1
+    },
+    {
+      "name": "samsung Z fold",
+      "price": 11000,
+      "category": "Mobile",
+      "color": "Black",
+      "image": "https://images.unsplash.com/photo-1592813630413-1124aa567638?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Samsung Galaxy ZFold",
+      "id": 2
+    },
+    {
+      "name": "Lenovo DESKTOP-KEA2HE3",
+      "price": 70000,
+      "category": "Laptop",
+      "color": "Grey",
+      "image": "https://plus.unsplash.com/premium_photo-1681302427948-2fd0eca629b1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Lenovo Laptop",
+      "id": 3
+    },
+    {
+      "name": "Mac Book Pro",
+      "price": 130000,
+      "category": "Laptop",
+      "color": "Grey",
+      "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Macbook Pro",
+      "id": 4
+    },
+    {
+      "name": "Sneakers",
+      "price": 10000,
+      "category": "Shoes",
+      "color": "Maroon white",
+      "image": "https://images.unsplash.com/photo-1656164753657-8ff832063a71?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Nike Shoes",
+      "id": 5
+    },
+    {
+      "name": "Casio edifice",
+      "price": 12000,
+      "category": "Watch",
+      "color": "Sapphire",
+      "image": "https://images.unsplash.com/photo-1768161680900-c161a9a35cf0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Casio Watch",
+      "id": 6
+    },
+    {
+      "name": "Girl's Jacket",
+      "price": 1899,
+      "category": "Women Clothes",
+      "color": "Red",
+      "image": "https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is a Jacket.",
+      "id": 7
+    },
+    {
+      "name": "Creed Aventus",
+      "price": 30000,
+      "category": "Perfume",
+      "color": "Black",
+      "image": "https://images.unsplash.com/photo-1624811742200-69166e7b7bcc?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Creed Aventus",
+      "id": 8
+    },
+    {
+      "name": "IFB Washing Machine",
+      "price": 47900,
+      "category": "Washing Machine",
+      "color": "Black",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRP7dzXg3eDPUHZ8iDtT10Not4lUvEYHxcyA5Y2wihm3qOO2ORqu4RfO-xM6hjQGy275fI8kG-Zg_LDmqjn5oaJED2H2y0UTIxgRDt7xNk",
+      "description": "This is IFB Front load washing Machine",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "name": "Shree",
+      "email": "shree@user.com",
+      "password": "shree@2527",
+      "id": 1
+    },
+    {
+      "name": "rohit pawar",
+      "email": "rohitpawar@user.com",
+      "password": "rohit@2527",
+      "id": 2
+    },
+    {
+      "name": "Rambhau Mane",
+      "email": "rambhau@user.com",
+      "password": "rambhau@1234",
+      "id": 3
+    },
+    {
+      "name": "rohit",
+      "email": "rohit@gmail.com",
+      "password": "rohit@2797",
+      "id": 4
+    }
+  ],
+  "cart": [
+    {
+      "name": "samsung Z fold",
+      "price": 11000,
+      "category": "Mobile",
+      "color": "Black",
+      "image": "https://images.unsplash.com/photo-1592813630413-1124aa567638?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is Samsung Galaxy ZFold",
+      "quantity": 1,
+      "productId": 2,
+      "id": 4
+    },
+    {
+      "name": "I Phone 17",
+      "price": 12000,
+      "category": "Mobile",
+      "color": "Black",
+      "image": "https://images.unsplash.com/photo-1709859071282-9982d4d7fe81?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This is I Phone 17",
+      "quantity": 1,
+      "userId": 4,
+      "productId": 1,
+      "id": 16
+    }
+  ],
+  "orders": []
+}

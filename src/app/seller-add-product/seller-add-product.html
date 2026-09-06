@@ -1,0 +1,54 @@
+<div class="auth-container">
+    <div class="auth-card">
+        <h2>Add New Product</h2>
+        <p>{{addProductMessage}}</p>
+        <form #addProductForm="ngForm" (ngSubmit)="submit(addProductForm.value)">
+            
+            <!--  Product Name -->
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" #name="ngModel" required placeholder="Enter product name" name="name" ngModel>
+                <span *ngIf="name?.invalid && name?.touched" style="color: red;">Product name is required</span>
+            </div>
+
+            <!--  Product Price -->
+            <div class="form-group">
+                <label>Product Price</label>
+                <input type="number" #price="ngModel" required placeholder="Enter product price" name="price" ngModel>
+                <span *ngIf="price?.invalid && price?.touched" style="color: red;">Product price is required</span>
+            </div>
+
+            <!--  Product Category -->
+            <div class="form-group">
+                <label>Product Category</label>
+                <input type="text" #category="ngModel" required placeholder="Enter product category" name="category" ngModel>
+                <span *ngIf="category?.invalid && category?.touched" style="color: red;">Category is required</span>
+            </div>
+
+            <!--  Product Color -->
+            <div class="form-group">
+                <label>Product Color</label>
+                <input type="text" #color="ngModel" required placeholder="Enter product color" name="color" ngModel>
+                <span *ngIf="color?.invalid && color?.touched" style="color: red;">Color is required</span>
+            </div>
+
+            <!--  Product Image URL -->
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="text" #image="ngModel" required placeholder="Enter image URL" name="image" ngModel>
+                <span *ngIf="image?.invalid && image?.touched" style="color: red;">Image URL is required</span>
+            </div>
+
+            <!--  Product Description -->
+            <div class="form-group">
+                <label>Product Description</label>
+                <input type="text" #description="ngModel" required placeholder="Enter product description" name="description" ngModel>
+                <span *ngIf="description?.invalid && description?.touched" style="color: red;">Description is required</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" [disabled]="addProductForm.invalid">Add Product</button>
+
+        </form>
+    </div>
+</div>

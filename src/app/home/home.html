@@ -1,0 +1,56 @@
+@if (popularProducts.length > 0) {
+	<ngb-carousel [interval]="3000" [pauseOnHover]="true">
+        @for (item of popularProducts; track item.id){
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+                <a [routerLink]="['/details', item.id]">
+				<img class="image-style" [src]="item.image" [alt]="item.name" />
+                </a>
+			</div>
+			<div class="carousel-caption">
+				<h3>{{item.name}}</h3>
+				<p>{{item.description}}</p>
+			</div>
+		</ng-template>
+    }
+	</ngb-carousel>
+}
+<div class="product-list-wrapper container my-4">
+  <h1 class="text-center mb-4 fw-bold">Trending Products</h1>
+  
+  <div class="row g-3">
+    <!-- Single Product Card -->
+    <div class="col-6 col-md-3" *ngFor="let item of trendingProducts">
+      <div class="card h-100 shadow-sm border-0">
+        <!-- Product Image -->
+        <div class="product-item">
+            <a [routerLink]="['/details', item.id]">
+          <img 
+            class="card-img-top img-fluid" 
+            style="height: 200px; object-fit: cover;" 
+            [src]="item.image" 
+            [alt]="item.name"
+          />
+          </a>
+        </div>
+        
+        <!-- Product Details -->
+        <div class="card-body p-2 p-md-3 text-center">
+          <h6 class="card-title fw-bold mb-1 text-truncate">{{item.name}}</h6>
+          <div class="text-primary fw-bold mb-1">
+            <span>Price: ₹{{item.price}}</span>
+          </div>
+          <div class="text-muted small">
+            <span>Color: {{item.color}}</span>
+          </div>
+        </div>
+
+        <!-- Product Footer -->
+        <div class="card-footer bg-transparent border-0 d-flex flex-column flex-md-row gap-2 p-2 pt-0">
+          <a [routerLink]="['/details', item.id]" class="btn btn-outline-primary btn-sm flex-fill">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

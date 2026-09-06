@@ -1,0 +1,178 @@
+
+:root {
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+  padding: 12px 5%;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+/* Search Bar Styling */
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  max-width: 450px;
+}
+
+.nav-search input {
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.nav-search input:focus {
+  border-color: var(--primary-color);
+}
+
+.nav-search .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;           
+  color: #ffffff !important; 
+  background-color: #ff5722 !important; 
+  border: 2px solid #ff5722 !important;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  display: inline-block;       
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-search .btn:hover {
+  background-color: #1945e6 !important; 
+  border-color: #1945e6 !important;
+}
+/* 4. Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .nav-search {
+    order: 3; /* सर्च बार सर्वात खाली दिसेल */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+  .suggested-result {
+  position: absolute;
+  top: 100%;                  
+  left: 0;
+  width: 100%;                
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  list-style-type: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  max-height: 250px;          
+  overflow-y: auto;
+  z-index: 1000;               
+}
+
+/* Product li */
+.suggested-result li {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.suggested-result li:last-child {
+  border-bottom: none;
+}
+
+/* Hover */
+.suggested-result li:hover {
+  background-color: #f8f9fa;
+}
+
+/* Links */
+.suggested-result li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;    
+}
+
+.suggested-result li a:hover {
+  color: #007bff;             
+}
+}

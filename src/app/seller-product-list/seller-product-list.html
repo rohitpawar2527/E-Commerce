@@ -1,0 +1,46 @@
+<div class="product-container">
+    <h2>Product List</h2>
+    <p>{{productMessage}}</p>
+
+    <button class="fetch-btn" (click)="fetchitems()">
+        Get Product List
+    </button>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Color</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList">
+                <td class="img-td">
+                    <img src="{{ item.image }}" [alt]="item.name" class="product-img" />
+                </td>
+                <td class="font-bold">{{ item.name }}</td>
+                <td>₹{{ item.price }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.color }}</td>
+                <td class="desc-td">{{ item.description }}</td>
+                <td>
+                    <div class="action-btns">
+                    <fa-icon class="delete-icon" (click)="deleteProduct(item.id)" [icon]= "icon" />
+                    <a [routerLink]="['/seller-update-product',item.id]" ><fa-icon class="update-icon" [icon]= "edit" /></a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr *ngIf="productList.length === 0">
+                <td colspan="8" class="empty-msg">
+                    Data is Loading or No Products Available
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

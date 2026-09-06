@@ -1,0 +1,42 @@
+<div class="product-container container my-5">
+    <h2 class="fw-bold mb-2 text-center text-dark">📦 My Orders</h2>
+
+    <div class="table-responsive shadow-sm border rounded-3 bg-white">
+        <table class="product-table table align-middle mb-0 table-hover text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="py-3">Image</th>
+                    <th scope="col" class="py-3">Order ID</th>
+                    <th scope="col" class="py-3">Price</th>
+                    <th scope="col" class="py-3">Status</th>
+                    <th scope="col" class="py-3">Action</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="orderData && orderData.length>0">
+                <tr *ngFor="let order of orderData">
+                    <td class="img-td py-3">
+                        <img src="https://plus.unsplash.com/premium_vector-1682301669172-2fe738999891?q=80&w=1051&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Order Image" class="product-img rounded-3 object-fit-cover shadow-sm" width="70"
+                            height="70" />
+                    </td>
+                    <td class="font-bold fw-bold text-secondary">#{{order.id}}</td>
+                    <td class="fw-bold text-success fs-6">₹{{order.totalPrice}}</td>
+                    <td>
+                        <span
+                            class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill px-3 py-2 fw-semibold">
+                            🚚 Processing
+                        </span>
+                    </td>
+                    <td>
+                        <div class="action-btns">
+                            <button type="button" (click)="cancelorder(order.id)"
+                                class="submit-btn ">
+                                Cancel Order
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

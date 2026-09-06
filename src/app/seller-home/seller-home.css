@@ -1,0 +1,61 @@
+.seller-dashboard {
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.seller-dashboard h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.seller-dashboard p {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: #3498db;
+}
+
+a.card {
+  text-decoration: none; 
+  color: inherit; 
+  display: block;
+}
+
+.card h3 {
+  color: #2980b9;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
